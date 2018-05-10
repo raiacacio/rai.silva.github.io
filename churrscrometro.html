@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Shop Bier CWB</title>
+		<link rel="stylesheet" href="css/estilo_index.css"/>
+	
+	</head>
+	<body>
+		<div id="interface">
+			<header id="cabecalho">
+				<img src="imagens/LOGO.jpg"/>
+				<nav>
+					<a href="index.html">home</a>
+					<a href="produtos.html">produtos</a>
+					<a href="churrscrometro.html">churrascrometro</a>
+				</nav>
+			</header>
+                    <div id="texto">
+                
+
+                <div id="convidados" class="tabela" style='-moz-user-select: none;-webkit-user-select: none;' onselectstart='return: false;'>
+                    <div class="titulo">
+                        <h4>Quantidade de convidados</h4>
+                    </div>
+
+                    <ul class="listagem">
+                        <li id="homens" class="left">
+                            <h5>homens</h5>
+                            <p>Quantidade de pessoas</p>  
+                            <script type="text/javascript">
+                                exibeValor('homem');
+                            </script>                         
+                            <span class="quantidade" id="homem">0</span>
+                           
+                            <input type="hidden" name="input-homem" id="input-homem" value=""/>
+                            
+                            <div class="divisoriaTab"></div>
+
+                            <div class="botoes">
+                               <a class="mais left" onclick="addPessoa('homem')">+</a>
+                               <a class="menos right" onclick="removePessoa('homem')">-</a>
+                            </div>
+                        </li>
+
+                        <li id="mulheres" class="left">
+                           <h5>mulheres</h5>
+                           <p>Quantidade de pessoas</p>
+                             <script type="text/javascript">
+                                exibeValor('mulher');
+                            </script>
+                           <span class="quantidade" id="mulher">0</span>
+                            <input type="hidden" name="input-mulher" id="input-mulher" value=""/>
+
+                           <div class="divisoriaTab"></div>
+
+                           <div class="botoes">
+                               <a class="mais left" onclick="addPessoa('mulher')">+</a>
+                               <a class="menos right" onclick="removePessoa('mulher')">-</a>
+                           </div>
+                        </li>
+
+                        <li id="criancas" class="left">
+                           <h5>crianças</h5>
+                           <p>Quantidade de pessoas</p>
+                            <script type="text/javascript">
+                                exibeValor('crianca');
+                            </script>
+                           <span class="quantidade" id="crianca">0</span>
+                            <input type="hidden" name="input-crianca" id="input-crianca" value=""/>
+
+                           <div class="divisoriaTab"></div>
+
+                           <div class="botoes">
+                              <a class="mais left" onclick="addPessoa('crianca')">+</a>
+                               <a class="menos right" onclick="removePessoa('crianca')">-</a>
+                           </div>
+                        </li>
+                    </ul>
+                    <div class="listagem">
+                        <div class="margens">
+                            <ul class="left">
+                                <li>
+                                    <input name="picanha" id="picanha" class="check" type="checkbox" />
+                                    <label for="picanha">Picanha<span id="qtd-picanha"></span></label>
+                                </li>
+
+                                <li>
+                                    <input name="maminha" id="maminha" class="check" type="checkbox" />
+                                    <label for="maminha">Maminha<span id="qtd-maminha"></span></label>
+                                </li>
+
+                                <li>
+                                    <input name="costela" id="costela" class="check" type="checkbox" />
+                                    <label for="costela">Costela<span id="qtd-costela"></span></label>
+                                </li>
+                            </ul>
+
+                            <ul class="left">
+                                <li>
+                                    <input name="alcatra" id="alcatra" class="check" type="checkbox" />
+                                    <label for="alcatra">Alcatra<span id="qtd-alcatra"></span></label>
+                                </li>
+
+                                <li>
+                                    <input name="cupim" id="cupim" class="check" type="checkbox" />
+                                    <label for="cupim">Cupim<span id="qtd-cupim"></span></label>
+                                </li>
+
+                                <li>
+                                    <input name="coracao" id="coracao" class="check" type="checkbox" />
+                                    <label for="coracao">Coração <br/>de frango<span id="qtd-coracao"></span></label>
+                                </li>
+                            </ul>
+
+                            <ul class="left">
+                                <li>
+                                    <input name="linguica" id="linguica" class="check" type="checkbox" />
+                                    <label for="linguica">Linguiça<span id="qtd-linguica"></span></label>
+                                </li>
+
+                                <li>
+                                    <input name="frango" id="frango" class="check" type="checkbox" />
+                                    <label for="frango">Frango<br/><span class="pequeno">(sobrecoxa e asa)</span><span id="qtd-frango"></span></label>
+                                </li>
+
+                                <li>
+                                    <input name="outras" id="outras" class="check" type="checkbox" />
+                                    <label for="outras">Outras carnes<span id="qtd-outras"></span></label>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    <!-- <div class="titulo">
+                        <h4 style="cursor: pointer;" onclick="carnesSelecionadas();">Calcular</h4>
+                    </div> -->
+                </div>
+
+                <div class="divisoriaTotal"></div>
+
+                <div id="bebidas" class="tabela" style='-moz-user-select: none;-webkit-user-select: none;' onselectstart='return: false;'>
+                        <div class="titulo">
+                            <h4>Bebidas</h4>
+                        </div>
+
+                        <div class="listagem">
+                            <div class="margens">                            
+                                <ul class="left">
+                                    <li>
+                                        <input name="refrigerante_litro" id="refrigerante_litro" class="check" type="checkbox" />
+                                        <label for="refrigerante_litro">Refrigerante (2L)<span id="qtd-refrigerante_litro"></span></label>
+                                    </li>
+
+                                    <li>
+                                        <input name="refrigerante_lata" id="refrigerante_lata" class="check" type="checkbox" />
+                                        <label for="refrigerante_lata">Refrigerante (Lata)<span id="qtd-refrigerante_lata"></span></label>
+                                    </li>
+                                </ul>
+
+                                <ul class="left">
+                                     <li>
+                                        <input name="cerveja" id="cerveja" class="check" type="checkbox" />
+                                        <label for="cerveja">Cerveja (600ml) <span id="qtd-cerveja"></span></label>
+                                    </li>
+
+                                    <li>
+                                        <input name="vodca" id="vodca" class="check" type="checkbox" />
+                                        <label for="vodca">Vodca <span id="qtd-vodca"></span></label>
+                                    </li> 
+                                </ul>
+
+                                <ul class="left">
+                                    <li>
+                                        <input name="gelo" id="gelo" class="check" type="checkbox" />
+                                        <label for="gelo">Gelo 5kg<span id="qtd-gelo"></span></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    	</div>
+		
+	</body>
+</html>
