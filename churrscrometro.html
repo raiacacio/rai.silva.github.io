@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Shop Bier CWB</title>
+		<link rel="stylesheet" href="css/estilo_index.css"/>
+	
+	</head>
+	<body>
+		<div id="interface">
+			<header id="cabecalho">
+				<img src="imagens/LOGO.jpg"/>
+				<nav>
+					<a href="index.html">home</a>
+					<a href="produtos.html">produtos</a>
+					<a href="churrscrometro.html">churrascrometro</a>
+				</nav>
+			</header>
+			
+			
+<div id=contador-churrs>
+    <h1>Churrascômetro</h1>
+    <h3>Calcule seu churrasco</h3>
+
+
+	
+	<p>Informe a quantidade de pessoas:</p>
+	
+    <div class="clearfix chqtd hideprint">
+	<table>
+        <tr>
+            <th>
+    <p>Homens</p>            
+    <input id="qtdHomens" type="number" class="qtdHomens qtd" value="" />
+        </th>
+      <th>
+    <p>Mulheres</p>            
+    <input id="qtdMulheres" type="number" class="qtdMulheres qtd" value="" />
+        </th>
+       <th>
+    <p>Crianças</p>            
+    <input id="qtdCriancas" type="number" class="qtdCriancas qtd" value="" />
+           </th>
+        </tr>  
+    </table>
+    </div>
+	
+    <br/>
+    <p>Carnes</p>
+    <table id="churrascometroTable" class="table">    	
+        
+        	<thead>
+        	<tr>
+            	<th>Item</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            
+        	
+        </tbody>
+       
+      
+    </table>
+    <br />
+    <p>Bebidas</p>
+    <table id="bebidasTable" class="table">
+    	<thead>
+        	<tr>
+            	<th>Item</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+        	
+        </tbody>
+    </table>
+    
+ 
+    
+
+
+<footer>
+
+        <div>
+        
+        <p>© 2018 Raí - Todos os direitos reservados</p>
+
+		</div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+
+
+
+<script type="text/javascript" src="/js/php-js/number_format.js"></script>
+<script id="contador" type="text/javascript">
+var Churrascometro = Churrascometro || {};
+Churrascometro.config = {
+	inputH: '#qtdHomens',
+	inputM: '#qtdMulheres',
+	inputC: '#qtdCriancas',
+	tableCarnes: '#churrascometroTable',
+	tableBebidas: '#bebidasTable',
+	carnes: [
+		{nome:"Carne",consumoHomem:0.400,consumoMulher:0.350,consumoCrianca:0.100},
+		
+	],
+	bebidas: [
+		{nome:"Refrigerante (2L)",consumoHomem:0.25,consumoMulher:0.375,consumoCrianca:0.375},
+		{nome:"Refrigerante (Lata)",consumoHomem:2,consumoMulher:2,consumoCrianca:1},
+		{nome:"Cerveja (600ml)",consumoHomem:3,consumoMulher:2,consumoCrianca:0},
+		{nome:"Vodka (2L)",consumoHomem:0.10,consumoMulher:0.10,consumoCrianca:0},
+		{nome:"Gelo 5Kg",consumoHomem:0.10,consumoMulher:0.10,consumoCrianca:0},
+	],
+	calculaCarnes: function(){
+	},
+	init: function(){
+		lineTable = '<tr id="item{id}"><td class="name">{name}</td><td class="qtd">{qtd}</td></tr>';
+		
+		for(var carne in this.carnes){
+			obj = this.carnes[carne];
+			content = lineTable.replace('{id}', carne);
+			content = content.replace('{name}', obj.nome);
+			content = content.replace('{qtd}', '0');
+			$(this.tableCarnes).find('tbody').append(content);
+		}
+		
+		for(var bebida in this.bebidas){
+			obj = this.bebidas[bebida];
+			content = lineTable.replace('{id}', bebida);
+			content = content.replace('{name}', obj.nome);
+			content = content.replace('{qtd}', '0');
+			$(this.tableBebidas).find('tbody').append(content);
+		}
+		
+		$('.chqtd input').bind("keydown keypress keyup change", $.proxy(function (e) {
+            qtdHomens = parseInt($(this.inputH).val()) || 0;
+			qtdMulheres = parseInt($(this.inputM).val()) || 0;
+			qtdCriancas = parseInt($(this.inputC).val()) || 0;
+			total = 0;
+			
+			//Carnes
+			for(var _item in this.carnes){
+				obj = this.carnes[_item];
+				consumoTotalH = (obj.consumoHomem*qtdHomens);
+				consumoTotalM = (obj.consumoMulher*qtdMulheres);
+				consumoTotalC = (obj.consumoCrianca*qtdCriancas);
+				comsumoTotal = consumoTotalH+consumoTotalM+consumoTotalC;
+				$(this.tableCarnes+' #item'+_item).find('.qtd').html( this.conversaoUM(comsumoTotal));				
+			}
+			
+			//Bebidas
+			for(var _item in this.bebidas){
+				obj = this.bebidas[_item];
+				consumoTotalH = (obj.consumoHomem*qtdHomens);
+				consumoTotalM = (obj.consumoMulher*qtdMulheres);
+				consumoTotalC = (obj.consumoCrianca*qtdCriancas);
+				comsumoTotal = consumoTotalH+consumoTotalM+consumoTotalC;
+				$(this.tableBebidas+' #item'+_item).find('.qtd').html( Math.ceil(comsumoTotal) );				
+			}
+			
+			//$('#total').html(number_format(total.toFixed(2),2,',','.'));
+        }, this));
+		
+	},
+	conversaoUM: function(m){
+		if(m<1){
+			m = (m.toFixed(3)).replace('0.', '');
+			m = m+' g';
+		} else{
+			m = (m.toFixed(2))+' Kg';
+		}
+		return m;
+	}
+}
+$(document).ready(function(e) {
+	$('#qtdPessoas').focus();
+	Churrascometro.config.init();
+});
+</script>
+	</div>
+	 </div>
+
+
+	
+	</body>
+</html>

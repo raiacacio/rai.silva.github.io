@@ -1,60 +1,150 @@
 @charset utf-8;
 Body {
+	position: relative;
 	display: block;
 	background: linear-gradient(rgb(176,196,222),rgb(143,188,143),rgb(176,196,222));
-	height: 928px;
+	height: 100%;
+	margin: 5px 200px auto 200px;
+	
 }
 div#interface {
-	margin: 5px 150px auto 150px;
+	margin: auto;
 	border: 1px solid black; 
 	background-color: white;
+	box-shadow: 1px 1px 10px black;
+	
     
 }
 /*cabecalho*/
 div#interface header#cabecalho img{
 	position: relative;
-	margin: 20px 0px 0px 50px;
+	margin: 20px auto auto 50px;
 }
 div#interface header#cabecalho nav{
-	position: absolute;
-	left:800px;
+	position: relative;
 	margin-top: 150px;
+	margin-right: 50px;
+	float:right;
+	
 	
 }
 div#interface header#cabecalho nav a{
 	text-transform: uppercase;
 	margin-left: 5px;
 	background-color: aqua;
+	
 }
 /*logo marcas*/
 div#corpo section#logomarcas{
 	margin-top: 200px;
+	
 }
 div#corpo section#logomarcas img{
 	margin: 2px;
 	box-shadow: 1px 1px 10px black;
 }
-ol {
-    
+div#corpo section#logomarcas ol {
+	position:relative;
 	box-shadow: 1px 1px 10px black;
-	width:auto;
-	margin: 5px 1px 5px 1px;
-	padding: 0px;
+	width: 88%;
+	height:100%;
+	margin: 5px auto 15px auto;
+	padding: 5px;
 	text-align: center;
-    margin: 5px;
+	background-color: white;
+	
+    
 	
 }
-li {
+div#corpo section#logomarcas li {
 	display: inline-block;
 	padding: 0px;
-	width: 150px;
-	height: 150px;
-	margin: 5px;
-	margin-bottom: 0px;
-    text-align: center;
+	width: 145px;
+	height: 145px;
+	margin: 2px 0px 2px 0px;
 }
 
 div#texto {
     text-align: center;
     margin-top: 250px;
+
 }
+section#logomarcas p {
+    margin-left: 70px;
+    font-size: 20px;
+}
+/*footer*/
+
+footer{
+    text-align: center;
+}
+
+
+/*Pagina de Produtos*/
+div#produtos section#vendas {
+	margin-top: 200px;
+	
+}
+div#produtos section#vendas img{
+	
+	margin: 2px;
+	box-shadow: 1px 1px 10px black;
+	
+	
+}
+div#produtos section#vendas ol {
+	
+	position:relative;
+	box-shadow: 1px 1px 10px black;
+	width: 100%;
+	height:100%;
+	margin: 5px auto 15px auto;
+	padding: 0px;
+	text-align: center;
+	background-color: white;
+	
+	
+}
+div#produtos section#vendas li {
+	display: inline-block;
+	padding: 2px;
+	margin: 2px 0px 2px 0px;
+	
+}
+div.listagem {   
+    width: 50%;
+    margin-left: 45px;
+   
+}
+
+ /*churraschrometro*/     
+    
+
+
+	
+}
+div#qtsbebida ul{   
+    list-style-type: none; 
+	
+}
+
+
+
+div#contador-churrs {
+	text-align: center;
+	margin-top: 110px;
+	
+}
+
+
+
+div#contador-churrs  table  {
+    box-shadow: 1px 1px 10px black;
+	margin: auto;
+	padding: 5px;
+    background-color: rgba(220,220,220,0.6);
+}
+
+
+
+
