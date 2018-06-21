@@ -1,0 +1,167 @@
+@charset utf-8;
+Body {
+	position: relative;
+	display: block;
+	background: linear-gradient(rgb(176,196,222),rgb(143,188,143),rgb(176,196,222));
+	height: 100%;
+	margin: 5px 200px auto 200px;
+	
+}
+div#interface {
+	margin: auto;
+	border: 1px solid black; 
+	background-color: white;
+	box-shadow: 1px 1px 10px black;
+	
+    
+}
+/*cabecalho*/
+div#interface header#cabecalho img{
+	position: relative;
+	margin: 20px auto auto 50px;
+}
+div#interface header#cabecalho nav{
+	
+	margin-top: 150px;
+	margin-right: 50px;
+    float:right;
+	
+	
+}
+div#interface header#cabecalho nav a{
+	text-transform: uppercase;
+	margin-left: 5px;
+	background-color: aqua;
+	
+}
+/*logo marcas*/
+div#corpo section#logomarcas{
+	margin-top: 200px;
+	
+}
+div#corpo section#logomarcas img{
+	margin: 2px;
+	box-shadow: 1px 1px 10px black;
+}
+div#corpo section#logomarcas ol {
+	position:relative;
+	box-shadow: 1px 1px 10px black;
+	width: 88%;
+	height:100%;
+	margin: 5px auto 15px auto;
+	padding: 5px;
+	text-align: center;
+	background-color: white;
+	
+    
+	
+}
+div#corpo section#logomarcas li {
+	display: inline-block;
+	padding: 0px;
+	width: 145px;
+	height: 145px;
+	margin: 2px 0px 2px 0px;
+}
+
+div#texto {
+    text-align: center;
+    margin-top: 250px;
+
+}
+section#logomarcas p {
+    margin-left: 70px;
+    font-size: 20px;
+}
+/*footer*/
+
+footer{
+    text-align: center;
+}
+
+
+/*Pagina de Produtos*/
+div#produtos section#vendas {
+	margin-top: 200px;
+	
+}
+div#produtos section#vendas img{
+	
+	margin: 2px;
+	box-shadow: 1px 1px 10px black;
+	
+	
+}
+div#produtos section#vendas ol {
+	
+	position:relative;
+	box-shadow: 1px 1px 10px black;
+	width: 100%;
+	height:100%;
+	margin: 5px auto 15px auto;
+	padding: 0px;
+	text-align: center;
+	background-color: white;
+	
+	
+}
+div#produtos section#vendas li {
+	display: inline-block;
+	padding: 2px;
+	margin: 2px 0px 2px 0px;
+	
+}
+div.listagem {   
+    width: 50%;
+    margin-left: 45px;
+   
+}
+
+ /*churraschrometro*/     
+    
+
+
+	
+}
+div#qtsbebida ul{   
+    list-style-type: none; 
+	
+}
+
+
+
+div#contador-churrs {
+	text-align: center;
+	margin-top: 110px;
+	
+}
+
+
+
+div#contador-churrs  table  {
+    box-shadow: 1px 1px 10px black;
+	margin: auto;
+	padding: 5px;
+    background-color: rgba(220,220,220,0.6);
+}
+/*contador de visualização*/
+div.contador {
+    display: block;
+    position: absolute;
+    box-shadow: 1px 1px 10px black;
+    width:auto;
+    height: auto;
+    float: right;
+    margin-right: 8px;
+    text-align: center;    
+    margin-left: 1000px;
+    margin-top: -50px;
+    padding: 10px;
+   
+}
+
+.formulario {
+    margin-top: 200px;
+}
+
+
